@@ -12,10 +12,10 @@ client.on('ready', () => {
 
 
 const QRCode = require('qrcode');
-client.on('messageCreate', async msg => {
-  if (msg.content.startsWith('s!qrcode')) {
-    QRCode.toFile('qr.png', `${msg.content.split(' ')[1]}`);
-    msg.reply({ files: ['./qr.png'] })
+client.on('messageCreate', async message => {
+  if (message.content.startsWith('!qrcode')) {
+    QRCode.toFile('qr.png', `${message.content.split(' ')[1]}`);
+    message.reply({ files: ['./qr.png'] })
   }
 })
 
