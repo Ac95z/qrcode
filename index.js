@@ -7,7 +7,7 @@ const QRCode = require("qrcode");
 client.on("messageCreate", async message => {
   if (message.author.bot) return;
   if (message.content.startsWith("!qr")) {
-    const qr = message.content.split(" ")[1]
+    const qr = message.content.split(" ").slice(1).join(" ")
     if (!qr) return message.reply("キーワードを入力してください");
     QRCode.toFile("qr.png", `${qr}`);
     message.reply({ files: ["./qr.png"] });
