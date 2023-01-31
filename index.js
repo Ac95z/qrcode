@@ -1,8 +1,3 @@
-const Discord = require('discord.js');
-const client = new Discord.Client({
-  intents: ["GUILDS", "GUILD_PRESENCES", "GUILD_MESSAGES", "GUILD_MEMBERS", "GUILD_VOICE_STATES",],
-});
-
 const QRCode = require("qrcode");
 client.on("messageCreate", async message => {
   if (message.author.bot) return;
@@ -13,5 +8,3 @@ client.on("messageCreate", async message => {
     message.reply({ files: ["./qr.png"] });
   };
 });
-
-client.login(process.env.TOKEN);
