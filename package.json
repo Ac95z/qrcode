@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "node index.js"
+  },
+  "engines": {
+    "node": "16.x"
+  },
+  "dependencies": {
+    "qrcode": "^1.5.1"
+  }
+}
